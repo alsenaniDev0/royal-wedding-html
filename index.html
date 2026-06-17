@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="invite-site">
+        <section class="hero">
+            <div class="badge">{{title}}</div>
+            <div class="icon">{{icon}}</div>
+            <p class="message">{{message}}</p>
+            <h1 class="names">{{names}}</h1>
+
+            <div class="decor-line">
+                <span></span>
+                <b>✦</b>
+                <span></span>
+            </div>
+        </section>
+
+        <section id="details" class="details-section">
+            <div class="section-heading">
+                <span>تفاصيل الدعوة</span>
+                <h2>نسعد بحضوركم</h2>
+                <p>هذه تفاصيل المناسبة، ووجودكم يكمل فرحتنا.</p>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-card">
+                    <div class="detail-icon">📅</div>
+                    <small>التاريخ</small>
+                    <strong>{{date}}</strong>
+                </div>
+
+                <div class="detail-card">
+                    <div class="detail-icon">🕘</div>
+                    <small>الوقت</small>
+                    <strong>{{time}}</strong>
+                </div>
+
+                <div class="detail-card">
+                    <div class="detail-icon">📍</div>
+                    <small>الموقع</small>
+                    <strong>{{location}}</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="closing-section">
+            <div class="closing-box">
+                <div class="closing-icon">{{icon}}</div>
+                <h2>{{title}}</h2>
+                <p>{{closing}}</p>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
