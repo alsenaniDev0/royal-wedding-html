@@ -1,84 +1,91 @@
-[
-    {
-        "defaultValue": "💍",
-        "label": "الأيقونة",
-        "type": "icon",
-        "options": [
-            {
-                "label": "💍",
-                "value": "💍"
-            },
-            {
-                "value": "👑",
-                "label": "👑"
-            },
-            {
-                "value": "💐",
-                "label": "💐"
-            },
-            {
-                "label": "✨",
-                "value": "✨"
-            }
-        ],
-        "key": "icon",
-        "required": true
-    },
-    {
-        "key": "title",
-        "required": true,
-        "maxLength": 60,
-        "type": "text",
-        "label": "عنوان الدعوة",
-        "defaultValue": "دعوة زواج"
-    },
-    {
-        "maxLength": 220,
-        "minLength": 10,
-        "key": "message",
-        "required": true,
-        "defaultValue": "يشرفنا دعوتكم لحضور حفل زفاف",
-        "type": "textarea",
-        "label": "نص الدعوة"
-    },
-    {
-        "placeholder": "مثال: محمد",
-        "type": "names",
-        "label": "أسماء العروسين",
-        "minItems": 2,
-        "hint": "أضف اسم العريس ثم اسم العروس.",
-        "required": true,
-        "separator": " ♥ ",
-        "maxItems": 2,
-        "key": "names"
-    },
-    {
-        "type": "date",
-        "label": "تاريخ المناسبة",
-        "required": true,
-        "key": "date"
-    },
-    {
-        "key": "time",
-        "required": false,
-        "type": "time",
-        "label": "وقت المناسبة"
-    },
-    {
-        "hint": "اضغط لاختيار الموقع من Google Map",
-        "label": "الموقع",
-        "type": "map",
-        "placeholder": "اختر الموقع من الخريطة",
-        "key": "location",
-        "required": true
-    },
-    {
-        "required": true,
-        "key": "closing",
-        "maxLength": 180,
-        "minLength": 5,
-        "label": "رسالة الختام",
-        "type": "textarea",
-        "defaultValue": "حضوركم يسعدنا ويزيد فرحتنا جمالاً"
-    }
-]
+{
+    "id": "royal-wedding",
+    "name": "دعوة زفاف ملكية",
+    "version": "1.0.0",
+    "html": "index.html",
+    "css": "style.css",
+    "fields": [
+        {
+            "defaultValue": "💍",
+            "label": "الأيقونة",
+            "type": "icon",
+            "options": [
+                {
+                    "label": "💍",
+                    "value": "💍"
+                },
+                {
+                    "value": "👑",
+                    "label": "👑"
+                },
+                {
+                    "value": "💐",
+                    "label": "💐"
+                },
+                {
+                    "label": "✨",
+                    "value": "✨"
+                }
+            ],
+            "key": "icon",
+            "required": true
+        },
+        {
+            "key": "title",
+            "required": true,
+            "maxLength": 60,
+            "type": "text",
+            "label": "عنوان الدعوة",
+            "defaultValue": "دعوة زواج"
+        },
+        {
+            "maxLength": 220,
+            "minLength": 10,
+            "key": "message",
+            "required": true,
+            "defaultValue": "يشرفنا دعوتكم لحضور حفل زفاف",
+            "type": "textarea",
+            "label": "نص الدعوة"
+        },
+        {
+            "placeholder": "مثال: محمد",
+            "type": "names",
+            "label": "أسماء العروسين",
+            "minItems": 2,
+            "hint": "أضف اسم العريس ثم اسم العروس.",
+            "required": true,
+            "separator": " ♥ ",
+            "maxItems": 2,
+            "key": "names"
+        },
+        {
+            "type": "date",
+            "label": "تاريخ المناسبة",
+            "required": true,
+            "key": "date"
+        },
+        {
+            "key": "time",
+            "required": false,
+            "type": "time",
+            "label": "وقت المناسبة"
+        },
+        {
+            "hint": "اضغط لاختيار الموقع من Google Map",
+            "label": "الموقع",
+            "type": "map",
+            "placeholder": "اختر الموقع من الخريطة",
+            "key": "location",
+            "required": true
+        },
+        {
+            "required": true,
+            "key": "closing",
+            "maxLength": 180,
+            "minLength": 5,
+            "label": "رسالة الختام",
+            "type": "textarea",
+            "defaultValue": "حضوركم يسعدنا ويزيد فرحتنا جمالاً"
+        }
+    ]
+}
