@@ -143,28 +143,49 @@
             "type": "color",
             "label": "اللون الأساسي",
             "key": "primaryColor",
-            "defaultValue": "#7C2D12",
+            "defaultValue": "#6D214F",
+            "required": true
+        },
+        {
+            "type": "color",
+            "label": "اللون الأساسي الداكن",
+            "key": "primaryDarkColor",
+            "defaultValue": "#4C1537",
             "required": true
         },
         {
             "type": "color",
             "label": "اللون الثانوي",
             "key": "secondaryColor",
-            "defaultValue": "#BE185D",
+            "defaultValue": "#B23A72",
             "required": true
         },
         {
             "type": "color",
             "label": "لون الزخرفة",
             "key": "accentColor",
-            "defaultValue": "#F6C453",
+            "defaultValue": "#F4C95D",
+            "required": true
+        },
+        {
+            "type": "color",
+            "label": "لون الزخرفة الفاتح",
+            "key": "accentSoftColor",
+            "defaultValue": "#FFF0C9",
             "required": true
         },
         {
             "type": "color",
             "label": "لون الخلفية",
             "key": "backgroundColor",
-            "defaultValue": "#FFF7ED",
+            "defaultValue": "#FFF8FB",
+            "required": true
+        },
+        {
+            "type": "color",
+            "label": "لون الخلفية الثانوي",
+            "key": "backgroundSoftColor",
+            "defaultValue": "#FFFDFD",
             "required": true
         },
         {
@@ -176,16 +197,23 @@
         },
         {
             "type": "color",
+            "label": "لون البطاقات الداخلي",
+            "key": "surfaceSolidColor",
+            "defaultValue": "#FFFFFF",
+            "required": true
+        },
+        {
+            "type": "color",
             "label": "لون النص",
             "key": "textColor",
-            "defaultValue": "#24111A",
+            "defaultValue": "#2B1320",
             "required": true
         },
         {
             "type": "color",
             "label": "لون النص الهادئ",
             "key": "mutedColor",
-            "defaultValue": "#7C6A61",
+            "defaultValue": "#8A6D7E",
             "required": true
         }
     ]

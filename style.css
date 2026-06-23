@@ -1,18 +1,86 @@
+@property --primary {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #6d214f;
+}
+
+@property --primary-dark {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #4c1537;
+}
+
+@property --secondary {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #b23a72;
+}
+
+@property --accent {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #f4c95d;
+}
+
+@property --accent-2 {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #fff0c9;
+}
+
+@property --bg {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #fff8fb;
+}
+
+@property --bg-2 {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #fffdfd;
+}
+
+@property --surface {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #ffffff;
+}
+
+@property --surface-solid {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #ffffff;
+}
+
+@property --text {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #2b1320;
+}
+
+@property --muted {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #8a6d7e;
+}
+
 * {
     box-sizing: border-box;
 }
 
 :root {
     --primary: #6d214f;
+    --primary-dark: #4c1537;
     --secondary: #b23a72;
     --accent: #f4c95d;
     --accent-2: #fff0c9;
     --bg: #fff8fb;
     --bg-2: #fffdfd;
-    --surface: rgba(255, 255, 255, 0.78);
+    --surface: #ffffff;
     --surface-solid: #ffffff;
     --text: #2b1320;
     --muted: #8a6d7e;
+
     --border: rgba(109, 33, 79, 0.12);
     --shadow: rgba(43, 19, 32, 0.12);
     --shadow-strong: rgba(43, 19, 32, 0.22);
@@ -131,7 +199,7 @@ textarea {
     background:
         radial-gradient(circle at top right, rgba(255, 255, 255, 0.16), transparent 26%),
         radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.10), transparent 30%),
-        linear-gradient(135deg, #4c1537 0%, var(--primary) 45%, var(--secondary) 100%);
+        linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 45%, var(--secondary) 100%);
     overflow: hidden;
 }
 
@@ -383,7 +451,7 @@ textarea {
     padding: clamp(70px, 9vw, 110px) 20px;
     background:
         radial-gradient(circle at top right, rgba(255, 255, 255, 0.10), transparent 30%),
-        linear-gradient(135deg, #561a40 0%, var(--primary) 45%, var(--secondary) 100%);
+        linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 45%, var(--secondary) 100%);
 }
 
 .section-heading {
