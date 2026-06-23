@@ -1,18 +1,63 @@
 {
     "id": "royal-wedding",
     "name": "دعوة زفاف ملكية",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "html": "index.html",
     "css": "style.css",
-    "fields": [
-        {
-            "defaultValue": "💍",
-            "label": "الأيقونة",
-            "type": "icon",
+    "features": {
+        "feelings": {
+            "enabled": true,
+            "approvalMode": "manual",
+            "preventDuplicate": true,
+            "rateLimitMinutes": 5,
+            "title": "شارك مشاعرك",
+            "description": "اكتب رسالة جميلة لأصحاب الدعوة"
+        },
+        "rsvp": {
+            "enabled": true,
+            "preventDuplicate": true,
+            "title": "هل ستحضر؟",
+            "description": "يسعدنا معرفة حضورك للمناسبة",
             "options": [
                 {
-                    "label": "💍",
-                    "value": "💍"
+                    "label": "سأحضر",
+                    "value": "attending",
+                    "icon": "✅"
+                },
+                {
+                    "label": "لن أستطيع الحضور",
+                    "value": "not_attending",
+                    "icon": "❎"
+                },
+                {
+                    "label": "لم أقرر بعد",
+                    "value": "maybe",
+                    "icon": "❓"
+                }
+            ]
+        }
+    },
+    "fields": [
+        {
+            "type": "icon",
+            "label": "الأيقونة",
+            "key": "icon",
+            "options": [
+                {
+                    "value": "💍",
+                    "label": "💍"
+                },
+                {
+                    "value": "🤍",
+                    "label": "🤍"
+                },
+                {
+                    "value": "✨",
+                    "label": "✨"
+                },
+                {
+                    "value": "🌿",
+                    "label": "🌿"
                 },
                 {
                     "value": "👑",
@@ -21,71 +66,127 @@
                 {
                     "value": "💐",
                     "label": "💐"
-                },
-                {
-                    "label": "✨",
-                    "value": "✨"
                 }
             ],
-            "key": "icon",
+            "defaultValue": "💍",
             "required": true
         },
         {
-            "key": "title",
-            "required": true,
-            "maxLength": 60,
             "type": "text",
             "label": "عنوان الدعوة",
-            "defaultValue": "دعوة زواج"
+            "key": "title",
+            "defaultValue": "دعوة زواج",
+            "maxLength": 60,
+            "required": true
         },
         {
-            "maxLength": 220,
-            "minLength": 10,
-            "key": "message",
-            "required": true,
-            "defaultValue": "يشرفنا دعوتكم لحضور حفل زفاف",
             "type": "textarea",
-            "label": "نص الدعوة"
+            "label": "نص الدعوة",
+            "key": "message",
+            "defaultValue": "بكل الحب والسرور نتشرف بدعوتكم لمشاركتنا فرحة زواجنا",
+            "minLength": 10,
+            "maxLength": 220,
+            "required": true
         },
         {
-            "placeholder": "مثال: محمد",
             "type": "names",
             "label": "أسماء العروسين",
+            "key": "names",
+            "placeholder": "مثال: محمد",
             "minItems": 2,
-            "hint": "أضف اسم العريس ثم اسم العروس.",
-            "required": true,
-            "separator": " ♥ ",
             "maxItems": 2,
-            "key": "names"
+            "separator": " و ",
+            "hint": "أضف اسم العريس ثم اسم العروس.",
+            "required": true
         },
         {
             "type": "date",
-            "label": "تاريخ المناسبة",
-            "required": true,
-            "key": "date"
-        },
-        {
-            "key": "time",
-            "required": false,
-            "type": "time",
-            "label": "وقت المناسبة"
-        },
-        {
-            "hint": "اضغط لاختيار الموقع من Google Map",
-            "label": "الموقع",
-            "type": "map",
-            "placeholder": "اختر الموقع من الخريطة",
-            "key": "location",
+            "label": "تاريخ الحفل",
+            "key": "date",
             "required": true
         },
         {
-            "required": true,
-            "key": "closing",
-            "maxLength": 180,
-            "minLength": 5,
-            "label": "رسالة الختام",
+            "type": "time",
+            "label": "وقت الحفل",
+            "key": "time",
+            "defaultValue": "20:00",
+            "required": false
+        },
+        {
+            "type": "map",
+            "label": "الموقع",
+            "key": "location",
+            "placeholder": "اختر الموقع من الخريطة",
+            "hint": "اضغط لاختيار الموقع من Google Map",
+            "required": true
+        },
+        {
             "type": "textarea",
-            "defaultValue": "حضوركم يسعدنا ويزيد فرحتنا جمالاً"
+            "label": "رسالة الختام",
+            "key": "closing",
+            "defaultValue": "حضوركم يتمم فرحتنا ويزيد ليلتنا جمالاً",
+            "minLength": 5,
+            "maxLength": 180,
+            "required": true
+        },
+        {
+            "type": "youtube",
+            "label": "رابط YouTube للصوت",
+            "key": "soundUrl",
+            "placeholder": "https://youtu.be/...",
+            "hint": "ضع رابط YouTube وسيعمل كصوت للخلفية بعد فتح الدعوة",
+            "pattern": "^https?:\\/\\/.+",
+            "patternMessage": "الرابط يجب أن يبدأ بـ http أو https",
+            "required": false
+        },
+        {
+            "type": "color",
+            "label": "اللون الأساسي",
+            "key": "primaryColor",
+            "defaultValue": "#7C2D12",
+            "required": true
+        },
+        {
+            "type": "color",
+            "label": "اللون الثانوي",
+            "key": "secondaryColor",
+            "defaultValue": "#BE185D",
+            "required": true
+        },
+        {
+            "type": "color",
+            "label": "لون الزخرفة",
+            "key": "accentColor",
+            "defaultValue": "#F6C453",
+            "required": true
+        },
+        {
+            "type": "color",
+            "label": "لون الخلفية",
+            "key": "backgroundColor",
+            "defaultValue": "#FFF7ED",
+            "required": true
+        },
+        {
+            "type": "color",
+            "label": "لون البطاقات",
+            "key": "surfaceColor",
+            "defaultValue": "#FFFFFF",
+            "required": true
+        },
+        {
+            "type": "color",
+            "label": "لون النص",
+            "key": "textColor",
+            "defaultValue": "#24111A",
+            "required": true
+        },
+        {
+            "type": "color",
+            "label": "لون النص الهادئ",
+            "key": "mutedColor",
+            "defaultValue": "#7C6A61",
+            "required": true
         }
     ]
 }

@@ -1,63 +1,203 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <main class="invite-site">
-        <section class="hero">
-            <div class="badge">{{title}}</div>
-            <div class="icon">{{icon}}</div>
-            <p class="message">{{message}}</p>
-            <h1 class="names">{{names}}</h1>
+    <main class="wedding-site">
 
-            <div class="decor-line">
-                <span></span>
-                <b>✦</b>
-                <span></span>
+        <div class="global-bg" aria-hidden="true">
+            <span class="bg-orb orb-a"></span>
+            <span class="bg-orb orb-b"></span>
+            <span class="bg-orb orb-c"></span>
+            <span class="grid-line line-a"></span>
+            <span class="grid-line line-b"></span>
+        </div>
+
+        <section class="hero" id="top">
+            <div class="hero-bg" aria-hidden="true">
+                <span class="hero-ring ring-1"></span>
+                <span class="hero-ring ring-2"></span>
+                <span class="floating-shape shape-1">✦</span>
+                <span class="floating-shape shape-2">❋</span>
+                <span class="floating-shape shape-3">✧</span>
+                <span class="floating-shape shape-4">🤍</span>
+            </div>
+
+            <div class="hero-card">
+                <div class="top-badge">{{title}}</div>
+
+                <div class="main-icon">
+                    <span>{{icon}}</span>
+                </div>
+
+                <p class="hero-message">{{message}}</p>
+
+                <h1 class="couple-names">{{names}}</h1>
+
+                <div class="decor-line">
+                    <span></span>
+                    <b>✦</b>
+                    <span></span>
+                </div>
+
+                <div class="hero-meta">
+                    <div class="hero-meta-card">
+                        <small>التاريخ</small>
+                        <strong>{{date}}</strong>
+                    </div>
+                    <div class="hero-meta-card">
+                        <small>الوقت</small>
+                        <strong>{{time}}</strong>
+                    </div>
+                    <div class="hero-meta-card">
+                        <small>الموقع</small>
+                        <strong>{{location}}</strong>
+                    </div>
+                </div>
+
+                <div class="hero-actions">
+                    <a href="#details" class="primary-btn">تفاصيل الدعوة</a>
+                    <a href="#rsvp" class="ghost-btn">تأكيد الحضور</a>
+                </div>
             </div>
         </section>
 
         <section id="details" class="details-section">
             <div class="section-heading">
                 <span>تفاصيل الدعوة</span>
-                <h2>نسعد بحضوركم</h2>
-                <p>هذه تفاصيل المناسبة، ووجودكم يكمل فرحتنا.</p>
+                <h2>ننتظركم بكل حب</h2>
+                <p>وجودكم يضيء هذه المناسبة ويجعلها أكثر جمالاً وبهجة.</p>
             </div>
 
             <div class="details-grid">
                 <div class="detail-card">
                     <div class="detail-icon">📅</div>
-                    <small>التاريخ</small>
+                    <small>تاريخ الحفل</small>
                     <strong>{{date}}</strong>
                 </div>
 
                 <div class="detail-card">
                     <div class="detail-icon">🕘</div>
-                    <small>الوقت</small>
+                    <small>وقت الحفل</small>
                     <strong>{{time}}</strong>
                 </div>
 
                 <div class="detail-card">
                     <div class="detail-icon">📍</div>
-                    <small>الموقع</small>
+                    <small>موقع الحفل</small>
                     <strong>{{location}}</strong>
                 </div>
             </div>
         </section>
 
-        <section class="closing-section">
-            <div class="closing-box">
-                <div class="closing-icon">{{icon}}</div>
-                <h2>{{title}}</h2>
-                <p>{{closing}}</p>
+        <section id="rsvp" class="interactive-section" data-feature="rsvp">
+            <div class="section-heading light">
+                <span>تأكيد الحضور</span>
+                <h2>هل ستشاركنا الفرحة؟</h2>
+                <p>يسعدنا معرفة حضورك حتى نكون على أتم الاستعداد لاستقبالكم.</p>
+            </div>
+
+            <div class="interaction-card" data-feature-slot="rsvp">
+                <div class="interaction-top">
+                    <div class="interaction-icon">💌</div>
+                    <div>
+                        <h3>أخبرنا بردك</h3>
+                        <p>اختر حالة حضورك بعد كتابة اسمك</p>
+                    </div>
+                </div>
+
+                <input class="interaction-input" type="text" placeholder="اكتب اسمك" maxlength="60" data-rsvp-name>
+
+                <div class="rsvp-options">
+                    <button type="button" class="rsvp-option attending" data-rsvp-status="attending">
+                        <span>✅</span>
+                        <strong>سأحضر</strong>
+                        <small>يسعدنا حضورك</small>
+                    </button>
+
+                    <button type="button" class="rsvp-option not-attending" data-rsvp-status="not_attending">
+                        <span>❎</span>
+                        <strong>لن أحضر</strong>
+                        <small>نقدّر اعتذارك</small>
+                    </button>
+
+                    <button type="button" class="rsvp-option maybe" data-rsvp-status="maybe">
+                        <span>❓</span>
+                        <strong>لم أقرر بعد</strong>
+                        <small>يمكنك التأكيد لاحقًا</small>
+                    </button>
+                </div>
+
+                <p class="interaction-message" data-rsvp-message></p>
+
+                <p class="feature-note">
+                    يتم تسجيل الرد مرة واحدة فقط حسب إعدادات صاحب الدعوة.
+                </p>
             </div>
         </section>
+
+        <section id="feelings" class="feelings-section" data-feature="feelings">
+            <div class="section-heading">
+                <span>شارك مشاعرك</span>
+                <h2>اترك رسالة جميلة</h2>
+                <p>رسالتك ستكون لمسة جميلة تبقى ذكرى عزيزة لأصحاب المناسبة.</p>
+            </div>
+
+            <div class="feelings-card" data-feature-slot="feelings">
+                <div class="feelings-top">
+                    <div class="feelings-badge">✨ رسالة محبة</div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="field-group">
+                        <label>اسمك</label>
+                        <input type="text" placeholder="اكتب اسمك هنا" maxlength="60" data-feeling-name />
+                    </div>
+
+                    <div class="field-group full">
+                        <label>رسالتك</label>
+                        <textarea placeholder="اكتب مشاعرك أو تهنئتك هنا..." maxlength="500"
+                            data-feeling-message></textarea>
+                    </div>
+                </div>
+
+                <button class="submit-feeling" type="button" data-feeling-submit>
+                    إرسال الرسالة
+                </button>
+
+                <p class="feature-note">
+                    قد تظهر الرسائل مباشرة أو بعد المراجعة بحسب إعدادات صاحب الدعوة.
+                </p>
+            </div>
+        </section>
+
+        <section class="closing-section">
+            <div class="closing-box">
+                <div class="closing-glow" aria-hidden="true"></div>
+
+                <div class="closing-icon">{{icon}}</div>
+                <span class="closing-kicker">{{title}}</span>
+                <h2>{{names}}</h2>
+                <p>{{closing}}</p>
+
+                <div class="decor-line dark">
+                    <span></span>
+                    <b>✦</b>
+                    <span></span>
+                </div>
+            </div>
+        </section>
+
+        <footer class="site-footer">
+            <p>بكل حب صُممت هذه الدعوة لتكون ذكرى جميلة لا تُنسى</p>
+        </footer>
+
     </main>
 </body>
 
